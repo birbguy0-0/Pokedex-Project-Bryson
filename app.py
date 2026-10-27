@@ -18,14 +18,15 @@ if chose == "YES":
 # Develop a function that creates a new list of pokemon based on the type the user searched for. If no pokemon was found of that type inform the user
 if chose == "NO":
     print("ok")
-    type = input("Would You Like To Find A Specific Type: (Yes/No): ")
-    if type.upper() == "YES":
-        type_type = input("What Type Do You Want To Find: ")
-        type_type = type_type.lower()
-        type_type = type_type.capitalize()
-        for t in range(0, 809):
-            if type_type == data[t]["type"]:
-                print(f"{t + 1}: {data[t]["name"]}")
+type = input("Would You Like To Find A Specific Type: (Yes/No): ")
+if type.upper() == "YES":
+    type_type = input("What Type Do You Want To Find: ")
+    type_type = type_type.lower()
+    type_type = type_type.capitalize()
+    for t in range(0, 809):
+        if type_type == data[t]["type"]:
+            name = data[t][""]
+            print(f"{t + 1}: {data[t][f"{language.lower()}"]}")
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
 
 #Based on user input, show all moves that a pokemon could learn based on their type. For example, if Charizard is fire/fyling, show all fire and flying moves. HINT import the moves.json file too!
