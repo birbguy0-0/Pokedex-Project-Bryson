@@ -44,12 +44,14 @@ if find == "YES":
         if letter in data[f]["name"]["english"]:
             name = data[f]["name"][f"{language.lower()}"]
             print(f"{f + 1}: {name}")
+if find == "NO":
+    print("ok")
 #Based on user input, show all moves that a pokemon could learn based on their type. For example, if Charizard is fire/fyling, show all fire and flying moves. HINT import the moves.json file too!
 pick = input("Type A Pokemon: ")
 pick = pick.lower()
 pick = pick.capitalize()
 for p in range(0, 809):
     if pick == data[p]["name"]["english"]:
-        if data[p]["type"] in moves:
-            learn = moves[p]["ename"]
-            print(f"{p + 1}: {learn}")
+        for m in data[p]["type"]:
+            learn = moves[ename]
+            print(learn)
