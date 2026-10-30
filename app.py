@@ -52,6 +52,7 @@ pick = pick.lower()
 pick = pick.capitalize()
 for p in range(0, 809):
     if pick == data[p]["name"]["english"]:
-        for m in data[p]["type"]:
-            learn = moves[ename]
+        for m in moves:
+            if moves[m]["type"]    
+            learn = moves["ename"]
             print(learn)
