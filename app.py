@@ -52,7 +52,8 @@ pick = pick.lower()
 pick = pick.capitalize()
 for p in range(0, 809):
     if pick == data[p]["name"]["english"]:
-        for m in moves:
-            if moves[m]["type"]    
-            learn = moves["ename"]
-            print(learn)
+        pokemon_type = data[p]["type"]
+        for w in range(0, len(moves)):
+            if moves[w]["type"] in pokemon_type:
+                learn = moves[w]["ename"]
+                print(learn)
