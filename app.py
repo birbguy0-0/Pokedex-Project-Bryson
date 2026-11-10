@@ -6,15 +6,15 @@ move = open("./moves.json", encoding="utf8")
 data = json.load(pokedex)
 moves = json.load(move)
 # Create a function that will take the data from the JSON file and you will iterate through the list of pokemon and print each pokemons name.
-for i, pokemon in enumerate(data):
+for pokemon in data:
     name = pokemon["name"]["english"]
-    print(f"{i + 1}: {name}")
+    print(f"{pokemon + 1}: {name}")
 # Add a language choice feature and print the pokemons name based on the user input
 choose = input("Would You Like A Different Language Option (Yes/No): ")
 chose = choose.upper()
 if chose == "YES":
     language = input("What Language Do You Want It To Be In: (English, Japanese, Chinese, French): ")
-    for l, pokemon in enumerate(data):
+    for pokemon in data:
         name = pokemon["name"][f"{language.lower()}"]
         print(f"{l + 1}: {name}")
 # Develop a function that creates a new list of pokemon based on the type the user searched for. If no pokemon was found of that type inform the user
@@ -26,7 +26,7 @@ if type.upper() == "YES":
     type_type = input("What Type Do You Want To Find: ")
     type_type = type_type.lower()
     type_type = type_type.capitalize()
-    for t, pokemon in enumerate(data):
+    for t, pokemon in data:
         if type_type in pokemon["type"]:
             name = pokemon["name"][f"{language.lower()}"]
             print(f"{t + 1}: {name}")
@@ -40,7 +40,7 @@ if find == "YES":
     letter = input("What Pokemon Do You Want To Search For: ")
     letter = letter.lower()
     letter = letter.capitalize()
-    for f, pokemon in enumerate(data):
+    for f, pokemon in data:
         if letter in pokemon["name"]["english"]:
             name = pokemon["name"][f"{language.lower()}"]
             print(f"{f + 1}: {name}")
@@ -50,7 +50,7 @@ if find == "NO":
 pick = input("Type A Pokemon: ")
 pick = pick.lower()
 pick = pick.capitalize()
-for p, pokemon in enumerate(data):
+for p, pokemon in data:
     if pick == pokemon["name"]["english"]:
         pokemon_type = pokemon["type"]
         for w in moves:
