@@ -12,42 +12,50 @@ def something():
         print(name)
 something()
 # Add a language choice feature and print the pokemons name based on the user input
-choose = input("Would You Like A Different Language Option (Yes/No): ").upper()
-if choose == "YES":
-    language = input("What Language Do You Want It To Be In: (English, Japanese, Chinese, French): ")
-    for pokemon in data:
-        name = pokemon["name"][language.lower()]
-        print(name)
+def lang():
+    choose = input("Would You Like A Different Language Option (Yes/No): ").upper()
+    if choose == "YES":
+        language = input("What Language Do You Want It To Be In: (English, Japanese, Chinese, French): ")
+        for pokemon in data:
+            name = pokemon["name"][language.lower()]
+            print(name)
+    if choose == "NO":
+        language = "english"
+        print("ok")
+lang()
 # Develop a function that creates a new list of pokemon based on the type the user searched for. If no pokemon was found of that type inform the user
-if choose == "NO":
-    language = "english"
-    print("ok")
-type = input("Would You Like To Find A Specific Type (Yes/No): ")
-if type.upper() == "YES":
-    type_type = input("What Type Do You Want To Find: ").lower().capitalize()
-    for pokemon in data:
-        if type_type in pokemon["type"]:
-            name = pokemon["name"][language.lower()]
-            print(name)
-if type.upper() == "NO":
-    print("ok")
-    type_type = None
+def ty():
+    type = input("Would You Like To Find A Specific Type (Yes/No): ")
+    if type.upper() == "YES":
+        type_type = input("What Type Do You Want To Find: ").lower().capitalize()
+        for pokemon in data:
+            if type_type in pokemon["type"]:
+                name = pokemon["name"]["english"]
+                print(name)
+    if type.upper() == "NO":
+        print("ok")
+        type_type = None
+ty()
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
-find = input("Do You Want To Find A Pokemon (Yes/No): ").upper()
-if find == "YES":
-    letter = input("What Pokemon Do You Want To Search For: ").lower().capitalize()
-    for pokemon in data:
-        if letter in pokemon["name"]["english"]:
-            name = pokemon["name"][language.lower()]
-            print(name)
-if find == "NO":
-    print("ok")
+def fi():
+    find = input("Do You Want To Find A Pokemon (Yes/No): ").upper()
+    if find == "YES":
+        letter = input("What Pokemon Do You Want To Search For: ").lower().capitalize()
+        for pokemon in data:
+            if letter in pokemon["name"]["english"]:
+                name = pokemon["name"]["english"]
+                print(name)
+    if find == "NO":
+        print("ok")
+fi()
 #Based on user input, show all moves that a pokemon could learn based on their type. For example, if Charizard is fire/fyling, show all fire and flying moves. HINT import the moves.json file too!
-pick = input("Type A Pokemon: ").lower().capitalize()
-for pokemon in data:
-    if pick == pokemon["name"]["english"]:
-        pokemon_type = pokemon["type"]
-        for w in moves:
-            if w["type"] in pokemon_type:
-                learn = w["ename"]
-                print(learn)
+def pi():
+    pick = input("Type A Pokemon: ").lower().capitalize()
+    for pokemon in data:
+        if pick == pokemon["name"]["english"]:
+            pokemon_type = pokemon["type"]
+            for w in moves:
+                if w["type"] in pokemon_type:
+                    learn = w["ename"]
+                    print(learn)
+pi()
